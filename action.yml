@@ -1,0 +1,31 @@
+name: "Project Card Action"
+description: "Move issue cards across your GitHub project board automatically."
+
+inputs:
+  GH_TOKEN:
+    description: "GitHub token"
+    required: true
+  ISSUE_NUMBER:
+    description: "Issue number of card"
+    required: true
+  PROJECT_NAME:
+    description: "Name of project/board"
+    required: false
+  SOURCE_COLUMN:
+    description: "Name of source column"
+    required: false
+  TARGET_COLUMN:
+    description: "Name of target column"
+    required: true
+  CARD_POSITION:
+    description: "Position of card"
+    required: false
+    default: "bottom"
+
+runs:
+  using: "node12"
+  main: "dist/index.js"
+
+branding:
+  icon: "layout"
+  color: "blue"
